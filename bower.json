@@ -1,0 +1,14 @@
+{
+  "name": "mp-extended",
+  "private": true,
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "angular": "^1.6.4",
+    "bootstrap": "^3.3.7"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
+}
