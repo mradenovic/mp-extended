@@ -38,8 +38,8 @@ function initMapsAPI() {
 }
 
 function init() {
-  chrome.storage.sync.get(null, function (items) {
-    if (items.mpeMapsAutocomplete) {
+  chrome.storage.sync.get(null, function (options) {
+    if (options.mpeMapsAutocomplete) {
       loadCustomerScript();
     }
   });
