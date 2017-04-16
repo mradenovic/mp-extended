@@ -27,14 +27,19 @@
   "content_scripts": [
     {
       "matches": [
-        "http://*/*",
-        "https://*/*"
+        "http://*/*quoteStep1.jsp*",
+        "https://*/*quoteStep1.jsp*"
       ],
       "js": [
-        "scripts/contentscript.js"
+        "bower_components/jquery/dist/jquery.min.js",
+        "scripts/customer/load.js"
       ],
-      "run_at": "document_end",
-      "all_frames": false
+      "css": [
+        "styles/maps.css"
+      ]
     }
+  ],
+  "web_accessible_resources": [
+    "scripts/customer/customer.js"
   ]
 }
