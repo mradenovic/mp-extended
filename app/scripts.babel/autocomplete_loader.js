@@ -20,7 +20,7 @@ function loadCustomerScript() {
   // Load customer.js into script tag
   $('head')
     .append($('<script>')
-      .load(chrome.extension.getURL('scripts/customer/customer.js'), initMapsAPI())
+      .load(chrome.extension.getURL('scripts/autocomplete.js'), initMapsAPI())
     );
 }
 
@@ -98,6 +98,7 @@ function loadDirectionsButton(options) {
 function init() {
   chrome.storage.sync.get(null, function (options) {
     if (options.mpeMapsAutocomplete) {
+      console.log('AUTOCOMPLETE LOADER')
       loadCustomerScript();
     }
     if (options.mpeDirections) {
