@@ -6,6 +6,13 @@ angular.module('optionsApp')
   .service('optionsService', function () {
 
       var options = {
+        mpeLeads: {
+          type: 'checkbox',
+          value: true,
+          label: 'Create Quote from lead',
+          description: 'Add Create Quote button next to lead on leads.html',
+          disabled: false
+        },
         mpeMapsAutocomplete: {
           type: 'checkbox',
           value: true,

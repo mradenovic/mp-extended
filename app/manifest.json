@@ -1,6 +1,6 @@
 {
   "name": "__MSG_appName__",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "manifest_version": 2,
   "description": "__MSG_appDescription__",
   "icons": {
@@ -12,7 +12,8 @@
   "background": {
     "scripts": [
       "scripts/chromereload.js",
-      "scripts/background.js"
+      "scripts/background.js",
+      "scripts/message_handlers.js"
     ]
   },
   "permissions": [
@@ -35,14 +36,43 @@
         "bower_components/jquery/dist/jquery.min.js",
         "scripts/autocomplete_loader.js",
         "scripts/autocomplete.js",
-        "scripts/directions.js"
+        "scripts/directions.js",
+        "scripts/mp_lead.js"
       ],
       "css": [
         "styles/maps.css"
       ]
+    },
+    {
+      "matches": [
+        "https://mail.google.com/*"
+      ],
+      "run_at": "document_end",
+      "js": [
+        "bower_components/jquery/dist/jquery.min.js",
+        "bower_components/ready/dist/ready.min.js",
+        "scripts/gmail_leads.js"
+      ],
+      "css": [
+        "styles/maps.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://praqtiq.com/web_accessible_resources*"
+      ],
+      "js": [
+        "bower_components/jquery/dist/jquery.min.js",
+        "scripts/autocomplete.js",
+        "scripts/gmail.js",
+        "scripts/leads.js"
+      ]
     }
   ],
   "web_accessible_resources": [
-    "scripts/autocomplete.js"
+    "bower_components/jquery/dist/jquery.min.js",
+    "scripts/autocomplete.js",
+    "scripts/gmail.js",
+    "scripts/leads.js"
   ]
 }
