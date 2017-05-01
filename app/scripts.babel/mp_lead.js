@@ -1,6 +1,6 @@
 var port = chrome.runtime.connect({name: 'lead'});
 
-let SIZE_MAP = {
+var SIZE_MAP = {
 	'Just a few items':	'Few Items Only',
 	'Studio or Alcove Studio':	'Studio',
 	'1 Bedroom - Small':	'1 Bedroom - Small',
@@ -24,9 +24,9 @@ function updateLead(lead) {
   $('#primaryEmail').val(lead['Email:']);
   var size = SIZE_MAP[lead['Apt Size:']];
   $('[name=adSource]').val(size);
-  $('[name$=Zip]').val('11106')
-  $('[name$=Zip]').trigger('keyup');
-  $('[name$=Stairs]').val(0);
+  $('#Zip, #stop1Zip, #stop4Zip').val('11106')
+  $('#Zip, #stop1Zip, #stop4Zip').trigger('keyup');
+  $('#stop1Stairs, #stop4Stairs').val(0);
 }
 
 
