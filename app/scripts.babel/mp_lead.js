@@ -29,12 +29,23 @@ function updateLead(lead) {
   $('#stop1Stairs, #stop4Stairs').val(0);
 }
 
-
-port.postMessage({leadReady: true});
-port.onMessage.addListener(function(msg) {
-  if (msg.lead) {
-    updateLead(msg.lead);
-  }
-});
+function leads() {
+	port.postMessage({leadReady: true});
+	port.onMessage.addListener(function(msg) {
+	  if (msg.lead) {
+	    updateLead(msg.lead);
+	  }
+	});
+}
 
 console.log('mp_leads.js loaded')
+
+function init() {
+  chrome.storage.sync.get(null, function (options) {
+    if (options.mpeLeads) {
+      leads();
+    }
+  });
+}
+
+init();
