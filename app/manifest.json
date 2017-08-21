@@ -1,6 +1,6 @@
 {
   "name": "__MSG_appName__",
-  "version": "0.2.0",
+  "version": "0.3.3",
   "manifest_version": 2,
   "description": "__MSG_appDescription__",
   "icons": {
@@ -41,6 +41,29 @@
       ],
       "css": [
         "styles/maps.css"
+      ]
+    },
+    {
+      "matches": [
+        "http://*/*overview.jsp*",
+        "https://*/overview.jsp*"
+      ],
+      "js": [
+        "bower_components/jquery/dist/jquery.min.js",
+        "bower_components/ready/dist/ready.min.js",
+        "scripts/pay_mp.js"
+      ],
+      "css": [
+        "styles/maps.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://mxmerchant.com/mx6/*"
+      ],
+      "js": [
+        "bower_components/jquery/dist/jquery.min.js",
+        "scripts/pay_mx.js"
       ]
     },
     {

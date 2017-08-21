@@ -1,5 +1,5 @@
 var leadPort;
-var hangoutsPort;
+var paymentPort;
 
 function leads() {
   chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
@@ -10,6 +10,12 @@ function leads() {
           leadPort.postMessage(message);
         }
         break;
+        case 'Post Payment':
+          console.log('Post Payment...', message.payment);
+          if (paymentPort) {
+            paymentPort.postMessage(message);
+          }
+          break;
       default:
         console.log('Message: ', message);
     }
@@ -22,6 +28,11 @@ function leads() {
       leadPort = port;
       port.onMessage.addListener(leadOnMessage);
     }
+
+    if (port.name == 'payment') {
+      paymentPort = port;
+      port.onMessage.addListener(paymentOnMessage);
+    }
   });
 
 }
@@ -31,6 +42,13 @@ function leadOnMessage(msg) {
   console.log(msg);
   leadPort.postMessage({
     text: 'Hello lead'
+  });
+}
+
+function paymentOnMessage(msg) {
+  console.log(msg);
+  paymentPort.postMessage({
+    text: 'Hello payment'
   });
 }
 

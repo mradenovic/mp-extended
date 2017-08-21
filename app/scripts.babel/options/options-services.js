@@ -51,6 +51,13 @@ angular.module('optionsApp')
           description: 'The address of the parking lot.',
           disabled: '!(options.mpeDirections.value && (options.mpeParkingLotFirst.value || options.mpeParkingLotLast.value))'
         },
+        mpeQuickPay: {
+          type: 'checkbox',
+          value: false,
+          label: 'MX Merchant QuickPay',
+          description: 'Add button to charge the card with Quick Pay.',
+          disabled: false
+        }
         // mpeEmailSearch: {
         //   type: 'checkbox',
         //   value: false,
